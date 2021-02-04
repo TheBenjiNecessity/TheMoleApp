@@ -31,6 +31,11 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
+### `npm run electron-start`
+
+Opens a new electron app window displaying the react app. For development purposes, you must run `npm start` first before
+running `npm run electron-start` or else nothing will show in the electron window.
+
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
