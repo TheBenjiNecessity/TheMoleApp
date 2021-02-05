@@ -4,13 +4,22 @@
 	"private": true,
 	"main": "public/main.js",
 	"dependencies": {
+		"@fortawesome/fontawesome-free": "^5.15.1",
 		"@testing-library/jest-dom": "^5.11.9",
 		"@testing-library/react": "^11.2.5",
 		"@testing-library/user-event": "^12.6.3",
+		"axios": "^0.21.1",
+		"i18next": "^19.8.4",
+		"lodash": "^4.17.20",
+		"node-sass": "^4.14.1",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
+		"react-i18next": "^11.8.5",
+		"react-router-dom": "^5.2.0",
 		"react-scripts": "4.0.2",
-		"web-vitals": "^1.1.0"
+		"socket.io-client": "^2.3.1",
+		"web-vitals": "^1.1.0",
+		"websocket": "^1.0.32"
 	},
 	"scripts": {
 		"start": "react-scripts start",
@@ -20,11 +29,22 @@
 		"electron-start": "electron ."
 	},
 	"eslintConfig": {
-		"extends": [ "react-app", "react-app/jest" ]
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
 	},
 	"browserslist": {
-		"production": [ ">0.2%", "not dead", "not op_mini all" ],
-		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	},
 	"devDependencies": {
 		"electron": "^11.2.2"

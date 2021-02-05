@@ -1,0 +1,21 @@
+@import "./styles/main";
+@import "./styles/colors";
+
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+
+html,
+body,
+#root,
+.main {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background-color: $color-background;
+	color: $color-background-contrast;
+}
+
+hr {
+	margin: 1rem 0;
+}
