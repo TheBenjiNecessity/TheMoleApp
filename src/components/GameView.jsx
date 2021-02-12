@@ -10,25 +10,16 @@ import ExecutionView from './ExecutionView';
 import ExecutionWrapupView from './ExecutionWrapupView';
 import Room from '../models/room.model';
 import LobbyView from './LobbyView';
-import roomSocketService from '../services/socket-services/room-socket.service';
 import MoleRevealView from './MoleRevealView';
 
-const GameView = ({ room, player }) => {
-	function onNext(event) {
-		roomSocketService.moveNext(room.roomcode);
-	}
-
-	function onAgreeNext(event) {
-		roomSocketService.agreeToMoveNext(room.roomcode);
-	}
-
+const GameView = ({ room }) => {
 	switch (room.state) {
 		case Room.ROOM_STATES.LOBBY:
-			return <LobbyView room={room} onNext={onNext} />;
+			return <LobbyView room={room} />;
 		case Room.ROOM_STATES.WELCOME:
-			return <WelcomeView room={room} onNext={onAgreeNext} />;
+			return <WelcomeView room={room} />;
 		case Room.ROOM_STATES.MOLE_REVEAL:
-			return <MoleRevealView room={room} player={player} onNext={onAgreeNext} />;
+			return <MoleRevealView />;
 		case Room.ROOM_STATES.EPISODE_START:
 			return <EpisodeStartView room={room} />;
 		case Room.ROOM_STATES.IN_CHALLENGE:

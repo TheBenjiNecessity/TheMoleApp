@@ -1,11 +1,12 @@
 import React from 'react';
-import NextPanel from '../common/NextPanel';
+import TitlePanel from '../common/TitlePanel';
 
-const ChallengeIntermissionView = ({ previousChallenge, onNext }) => {
+const ChallengeIntermissionView = ({ previousChallenge }) => {
+	const { intermissionText } = previousChallenge;
 	return (
-		<NextPanel titleText="Welcome" nextButtonText="Start Game" onNext={onNext}>
-			<div>TODO: text describing the game</div>
-		</NextPanel>
+		<TitlePanel titleText="Challenge Intermission">
+			<div>{intermissionText ? <p>{intermissionText}</p> : <p>TODO: generic text</p>}</div>
+		</TitlePanel>
 	);
 };
 

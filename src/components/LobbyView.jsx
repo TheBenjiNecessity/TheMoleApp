@@ -1,19 +1,23 @@
 import React from 'react';
 //import { useTranslation } from 'react-i18next';
 import AgreePanel from '../common/AgreePanel';
-import NextPanel from '../common/NextPanel';
+import TitlePanel from '../common/TitlePanel';
 
 import PlayerListView from '../common/PlayerListView';
 
-const LobbyView = ({ room, onNext }) => {
+import { useTranslation } from 'react-i18next';
+
+const LobbyView = ({ room }) => {
+	const { t } = useTranslation('lobby');
+
 	return (
-		<NextPanel titleText="Lobby" nextButtonText="Start" onNext={onNext}>
+		<TitlePanel titleText="Lobby">
 			<div className="form-group pl-xs-0 pr-xs-0 mt-0 col-sm-6">
-				<label>Room Code:</label>
+				<label>{t('roomcode')}</label>
 				<div className="room-code">{room ? room.roomcode : 'No Code'}</div>
 			</div>
 			<div className="form-group pl-xs-0 pr-xs-0 mt-0 col-sm-6">
-				<label>Players:</label>
+				<label>{t('player_plural')}</label>
 				<div className="player-list">
 					{room && room.players && room.players.length ? (
 						room.players.map((player) => <PlayerListView key={player.name} player={player} />)
@@ -23,7 +27,7 @@ const LobbyView = ({ room, onNext }) => {
 				</div>
 			</div>
 			<AgreePanel room={room} />
-		</NextPanel>
+		</TitlePanel>
 	);
 };
 

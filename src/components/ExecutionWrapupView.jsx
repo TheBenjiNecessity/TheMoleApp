@@ -1,11 +1,15 @@
 import React from 'react';
-import NextPanel from '../common/NextPanel';
+import TitlePanel from '../common/TitlePanel';
 
-const ExecutionWrapupView = ({ eliminatedPlayer, onNext }) => {
+import { useTranslation } from 'react-i18next';
+
+const ExecutionWrapupView = ({ eliminatedPlayer }) => {
+	const { t } = useTranslation('execution_wrapup');
+
 	return (
-		<NextPanel titleText="Welcome" nextButtonText="Start Game" onNext={onNext}>
-			<div>TODO: text describing the game {eliminatedPlayer.name}</div>
-		</NextPanel>
+		<TitlePanel titleText={t('title')}>
+			<div>{t('executed_player_0', { playerName: eliminatedPlayer.name })}</div>
+		</TitlePanel>
 	);
 };
 

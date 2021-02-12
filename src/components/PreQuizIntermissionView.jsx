@@ -1,11 +1,18 @@
 import React from 'react';
-import NextPanel from '../common/NextPanel';
+import TitlePanel from '../common/TitlePanel';
 
-const PreQuizIntermissionView = ({ room, onNext }) => {
+import { useTranslation } from 'react-i18next';
+
+const PreQuizIntermissionView = (props) => {
+	const { t } = useTranslation('pre_quiz_intermission');
+
 	return (
-		<NextPanel titleText="Welcome" nextButtonText="Start Game" onNext={onNext}>
-			<div>TODO: text describing the game</div>
-		</NextPanel>
+		<TitlePanel titleText={t('title')}>
+			<div>
+				<p>{t('first_paragraph')}</p>
+				<p>{t('second_paragraph')}</p>
+			</div>
+		</TitlePanel>
 	);
 };
 

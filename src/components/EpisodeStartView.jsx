@@ -1,15 +1,19 @@
 import React from 'react';
-import NextPanel from '../common/NextPanel';
+import TitlePanel from '../common/TitlePanel';
 
-const EpisodeStartView = ({ previousEpisode, currentEpisode, onNextCallback }) => {
+import { useTranslation } from 'react-i18next';
+
+const EpisodeStartView = ({ previousEpisode, episodeIndex }) => {
+	const { t } = useTranslation('episode_start');
+
 	return (
-		<NextPanel titleText="Welcome" nextButtonText="Start Game" onNext={onNextCallback}>
+		<TitlePanel titleText={`Episode ${episodeIndex}`}>
 			{previousEpisode ? (
-				<div>TODO: text describing what happened in the previous episode</div>
+				<div>{previousEpisode.finalDescription}</div>
 			) : (
-				<div>TODO: describe the first episode</div>
+				<div>{t('first_episode_description')}</div>
 			)}
-		</NextPanel>
+		</TitlePanel>
 	);
 };
 
