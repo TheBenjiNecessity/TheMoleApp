@@ -2,9 +2,13 @@ import React, { Fragment } from 'react';
 import Room from '../../models/room.model';
 import PlayerListView from '../PlayerListView';
 
+import { useTranslation } from 'react-i18next';
+
 import './agree-panel.scss';
 
 const AgreePanel = ({ room }) => {
+	const { t } = useTranslation('common');
+
 	if (!room) {
 		return null;
 	}
@@ -13,7 +17,7 @@ const AgreePanel = ({ room }) => {
 
 	return (
 		<Fragment>
-			<p>Ready players:</p>
+			<p>{t('ready_players')}</p>
 			{agreedPlayers.map((player, i) => {
 				let className = 'col-sm-6 pl-sm-0 pr-sm-0';
 
