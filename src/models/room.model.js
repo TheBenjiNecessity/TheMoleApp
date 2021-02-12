@@ -1,12 +1,5 @@
 export default class Room {
-	roomcode = null;
-	state = 'lobby';
-	players = [];
-	episodes = [];
-
-	agreedPlayers = [];
-	raisedHands = {};
-
+	static MAX_PLAYERS = 10;
 	static ROOM_STATES = {
 		LOBBY: 'lobby',
 		WELCOME: 'game-welcome',
@@ -21,7 +14,12 @@ export default class Room {
 		EXECUTION_WRAPUP: 'execution-wrapup'
 	};
 
-	static MAX_PLAYERS = 10;
+	roomcode = null;
+	state = 'lobby';
+	players = [];
+	episodes = [];
+	agreedPlayers = [];
+	raisedHands = {};
 
 	constructor(roomcode) {
 		this.roomcode = roomcode;
