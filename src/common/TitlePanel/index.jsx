@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import './next-panel.scss';
+import './title-panel.scss';
 
 const TitlePanel = ({ titleText, children }) => {
 	return (
