@@ -9,9 +9,7 @@ import storageService from '../services/storage.service';
 
 const Game = () => {
 	const [ room, setRoom ] = useState(storageService.getRoom());
-	const [ player, setPlayer ] = useState(
-		storageService.getRoom().players.find((p) => p.name === storageService.getPlayerName())
-	);
+
 	const [ loading, setLoading ] = useState(false);
 
 	useEffect(() => {
@@ -34,10 +32,6 @@ const Game = () => {
 				setLoading(false);
 
 				__setRoom(newRoom);
-
-				if (player) {
-					roomService.joinRoom(newRoom.roomcode, player);
-				}
 			});
 		}
 	}, []);
@@ -45,13 +39,12 @@ const Game = () => {
 	function __setRoom(room) {
 		storageService.setRoom(room);
 		setRoom(room);
-		setPlayer(room.players.find((p) => p.name === storageService.getPlayerName()));
 	}
 
 	if (room) {
 		return (
 			<React.Fragment>
-				<GameView room={room} player={player} />
+				<GameView room={room} />
 				<FullScreenLoader loading={loading}>Loading</FullScreenLoader>
 			</React.Fragment>
 		);

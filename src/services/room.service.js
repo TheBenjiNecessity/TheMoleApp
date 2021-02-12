@@ -14,16 +14,6 @@ const roomService = {
 		});
 	},
 
-	joinRoom: (roomCode, oldPlayer) => {
-		return apiHelperService.put(`room/${roomCode}/join`, { player: oldPlayer }).then(({ room, player }) => {
-			socketService.joinRoom(room.roomcode);
-
-			storageService.clearValues();
-			storageService.setPlayerName(player.name);
-			storageService.setRoom(room);
-		});
-	},
-
 	getRoom: (roomCode) => {
 		return apiHelperService.get(`room/${roomCode}`);
 	}
