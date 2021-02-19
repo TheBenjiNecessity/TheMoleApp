@@ -2,14 +2,17 @@ import React from 'react';
 import TitlePanel from '../common/TitlePanel';
 
 import { useTranslation } from 'react-i18next';
+import PlayerList from '../common/PlayerList';
 
-const QuizView = (props) => {
+const QuizView = ({ finishedPlayers }) => {
 	const { t } = useTranslation('quiz');
 
 	return (
 		<TitlePanel titleText={t('title')}>
 			<p>{t('first_paragraph')}</p>
-			Show number of players who have completed their quizes
+
+			<p>{t('players_done')}</p>
+			<PlayerList players={finishedPlayers} inline />
 		</TitlePanel>
 	);
 };
