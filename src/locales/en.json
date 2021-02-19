@@ -22,6 +22,9 @@
 		"title": "Wrap up",
 		"executed_player_0": "We're sad to see {{playerName}} go. They will be missed."
 	},
+	"challenge_intermission": {
+		"generic_text": "generic_text"
+	},
 	"pre_quiz_intermission": {
 		"title": "Pre Quiz",
 		"first_paragraph": "In a moment, you will take the quiz; ten questions about the identity of the mole. The questions will may be anywhere from \"How tall is the mole?\" to \"What the mole did during a challenge?\".",
@@ -29,7 +32,8 @@
 	},
 	"quiz": {
 		"title": "Quiz",
-		"first_paragraph": "Look at your devices now to complete the quiz."
+		"first_paragraph": "Look at your devices now to complete the quiz.",
+		"players_done": "Players finished:"
 	},
 	"post_quiz_intermission": {
 		"title": "Post Quiz",
