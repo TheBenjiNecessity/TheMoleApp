@@ -26,7 +26,7 @@ const LobbyView = ({ room }) => {
 					)}
 				</div>
 			</div>
-			<AgreePanel room={room} />
+			<AgreePanel room={room} inline />
 		</TitlePanel>
 	);
 };
