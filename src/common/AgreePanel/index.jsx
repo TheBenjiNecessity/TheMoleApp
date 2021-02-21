@@ -3,8 +3,6 @@ import { useTranslation } from 'react-i18next';
 
 import PlayerList from '../PlayerList';
 
-import './agree-panel.scss';
-
 const AgreePanel = ({ room, inline, xl, lg, md, sm, xs }) => {
 	const { t } = useTranslation('common');
 
