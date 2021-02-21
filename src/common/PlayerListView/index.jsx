@@ -1,17 +1,13 @@
 import React from 'react';
-import clsx from 'clsx';
+import BlockLabel from '../BlockLabel';
 
 import './player-list-view.scss';
 
-const PlayerListView = ({ player, animate, className, inline }) => {
-	const style = animate ? { animation: `expandIn 1s` } : null;
-
+const PlayerListView = ({ player, className, inline }) => {
 	return (
-		<div className={clsx(className, inline && 'inline')}>
-			<div className="player-view" style={style}>
-				{player && player.name}
-			</div>
-		</div>
+		<BlockLabel className={className} inline={inline}>
+			{player && player.name}
+		</BlockLabel>
 	);
 };
 
