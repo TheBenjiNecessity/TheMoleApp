@@ -1,0 +1,26 @@
+@import '../../styles/colors';
+
+.block-label {
+	display: block;
+
+	height: 1em;
+	padding: 0.5rem;
+
+	border: 1px solid $dark-green;
+	text-align: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
+
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	&.inline {
+		display: inline-block;
+	}
+}
