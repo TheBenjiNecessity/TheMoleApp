@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import * as _ from 'lodash';
 import styles from './ExecutionView.module.scss';
 import clsx from 'clsx';
+import TextInput from '../common/TextInput';
 
 const EXECUTION_STATE = {
 	START: 0, // Before showing the player input (Showing a message about seeing red/green screen)
@@ -12,7 +13,7 @@ const EXECUTION_STATE = {
 	SHOWING_RESULTS: 5 // The Red/Green results screen is showing
 };
 
-const CHAR_INPUT_TIMES = [ 500, 750, 1000, 1500 ];
+const CHAR_INPUT_TIMES = [ 900, 750, 1000, 800 ];
 
 const ExecutionView = ({ shuffledPlayers, eliminatedPlayer }) => {
 	const [ currentShuffledPlayers, setCurrentShuffledPlayers ] = useState(shuffledPlayers);
@@ -21,6 +22,7 @@ const ExecutionView = ({ shuffledPlayers, eliminatedPlayer }) => {
 	const [ currentTick, setCurrentTick ] = useState(0);
 	const [ currentState, setCurrentState ] = useState(EXECUTION_STATE.START);
 	const [ inputValue, setInputValue ] = useState('');
+	const [ cursor, setCursor ] = useState('|');
 
 	const showStartParagraph = currentState === EXECUTION_STATE.START;
 	const showInput = _.includes(
@@ -88,6 +90,16 @@ const ExecutionView = ({ shuffledPlayers, eliminatedPlayer }) => {
 		[ currentCharacterIndex, currentInputPlayer.name, currentState, setNextPlayer ]
 	);
 
+	useEffect(
+		() => {
+			const timer = setTimeout(() => {
+				setCursor(cursor === '|' ? '' : '|');
+			}, 500);
+			return () => clearTimeout(timer);
+		},
+		[ cursor ]
+	);
+
 	return (
 		<div
 			className={clsx([
@@ -105,7 +117,14 @@ const ExecutionView = ({ shuffledPlayers, eliminatedPlayer }) => {
 					screen after your name has been entered then you have been eliminated from the game.
 				</p>
 			)}
-			{showInput && <input className={styles.input} type="text" value={inputValue} />}
+			{showInput && (
+				<label className={styles.inputLabel}>
+					<span className={styles.text}>Name:</span>
+					<span className={styles.input}>
+						<TextInput value={`${inputValue}${cursor}`} />
+					</span>
+				</label>
+			)}
 		</div>
 	);
 };

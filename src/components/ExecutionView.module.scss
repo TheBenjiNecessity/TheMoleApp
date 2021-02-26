@@ -3,11 +3,23 @@
 	height: 100%;
 	position: relative;
 
-	input.input {
+	.inputLabel {
 		position: absolute;
+		width: 350px;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		display: flex;
+		align-items: center;
+
+		.text {
+			font-size: 25px;
+		}
+
+		.input {
+			flex-grow: 1;
+			margin-left: 1rem;
+		}
 	}
 
 	&.execution-end {
