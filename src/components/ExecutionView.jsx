@@ -3,6 +3,7 @@ import * as _ from 'lodash';
 import styles from './ExecutionView.module.scss';
 import clsx from 'clsx';
 import TextInput from '../common/TextInput';
+import Logo from '../common/Logo';
 
 const EXECUTION_STATE = {
 	START: 0, // Before showing the player input (Showing a message about seeing red/green screen)
@@ -29,6 +30,8 @@ const ExecutionView = ({ shuffledPlayers, eliminatedPlayer }) => {
 		[ EXECUTION_STATE.PRE_SUBMIT_WAITING, EXECUTION_STATE.SUBMITTING, EXECUTION_STATE.POST_SUBMIT_WAITING ],
 		currentState
 	);
+	const showFullLogo = currentState === EXECUTION_STATE.SHOWING_RESULTS;
+	const showCornerLogo = currentState !== EXECUTION_STATE.SHOWING_RESULTS;
 
 	const setNextPlayer = useCallback(
 		() => {
@@ -109,21 +112,40 @@ const ExecutionView = ({ shuffledPlayers, eliminatedPlayer }) => {
 				eliminatedPlayer.name !== currentInputPlayer.name && styles.success
 			])}
 		>
-			{currentTick}
-			{showStartParagraph && (
-				<p>
-					In a moment, each player's name will be input into the input box one at a time. If you see a green
-					screen after your name has been entered you are safe for this episode. If, however, you see a red
-					screen after your name has been entered then you have been eliminated from the game.
-				</p>
-			)}
-			{showInput && (
-				<label className={styles.inputLabel}>
-					<span className={styles.text}>Name:</span>
-					<span className={styles.input}>
-						<TextInput value={`${inputValue}${cursor}`} />
-					</span>
-				</label>
+			<div className="panel abs-centered-panel hv-centered-panel">
+				{showStartParagraph && (
+					<div className={styles['start-paragraph']}>
+						<p>
+							In a moment, each player's name will be input into the input box one at a time. If you see a
+							green screen after your name has been entered you are safe for this episode. If, however,
+							you see a red screen after your name has been entered then you have been eliminated from the
+							game.
+						</p>
+					</div>
+				)}
+				{showInput && (
+					<label className={styles.inputLabel}>
+						<span className={styles.text}>Name:</span>
+						<span className={styles.input}>
+							<TextInput value={`${inputValue}${cursor}`} />
+						</span>
+					</label>
+				)}
+				{showFullLogo && (
+					<div
+						className={clsx([
+							eliminatedPlayer.name === currentInputPlayer.name && styles.fail,
+							eliminatedPlayer.name !== currentInputPlayer.name && styles.success
+						])}
+					>
+						<Logo size={400} logoColor="white" />
+					</div>
+				)}
+			</div>
+			{showCornerLogo && (
+				<div className={clsx([ styles.logo, styles['corner-logo'] ])}>
+					<Logo title="The Mole" size={200} textSize={45} withTitle />
+				</div>
 			)}
 		</div>
 	);
