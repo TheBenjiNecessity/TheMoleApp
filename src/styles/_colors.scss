@@ -13,3 +13,6 @@ $color-secondary-contrast: $white;
 
 $color-background: $black;
 $color-background-contrast: $white;
+
+$h-gradient-background: linear-gradient(90deg, $dark-green 0%, $black 30%);
+$v-gradient-background: linear-gradient(0deg, $dark-green 0%, $black 30%);
