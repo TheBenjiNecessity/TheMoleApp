@@ -1,9 +1,10 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import * as _ from 'lodash';
 import styles from './ExecutionView.module.scss';
 import clsx from 'clsx';
 import TextInput from '../common/TextInput';
 import Logo from '../common/Logo';
+import roomSocketService from '../services/socket-services/room-socket.service';
 
 const EXECUTION_STATE = {
 	START: 0, // Before showing the player input (Showing a message about seeing red/green screen)
@@ -16,8 +17,19 @@ const EXECUTION_STATE = {
 
 const CHAR_INPUT_TIMES = [ 900, 750, 1000, 800 ];
 
-const ExecutionView = ({ shuffledPlayers, eliminatedPlayer }) => {
-	const [ currentShuffledPlayers, setCurrentShuffledPlayers ] = useState(shuffledPlayers);
+const ExecutionView = ({ roomcode, shuffledPlayers, eliminatedPlayer }) => {
+	const allBeforeEl = useMemo(
+		() => {
+			return _.slice(
+				shuffledPlayers,
+				0,
+				_.findIndex(shuffledPlayers, (player) => player.name === eliminatedPlayer.name) + 1
+			);
+		},
+		[ eliminatedPlayer, shuffledPlayers ]
+	);
+
+	const [ currentShuffledPlayers, setCurrentShuffledPlayers ] = useState(allBeforeEl);
 	const [ currentInputPlayer, setCurrentInputPlayer ] = useState(shuffledPlayers[0]);
 	const [ currentCharacterIndex, setCurrentCharacterIndex ] = useState(-1);
 	const [ currentTick, setCurrentTick ] = useState(0);
@@ -26,25 +38,29 @@ const ExecutionView = ({ shuffledPlayers, eliminatedPlayer }) => {
 	const [ cursor, setCursor ] = useState('|');
 
 	const showStartParagraph = currentState === EXECUTION_STATE.START;
+	const showFullLogo = currentState === EXECUTION_STATE.SHOWING_RESULTS;
+	const showCornerLogo = currentState !== EXECUTION_STATE.SHOWING_RESULTS;
 	const showInput = _.includes(
 		[ EXECUTION_STATE.PRE_SUBMIT_WAITING, EXECUTION_STATE.SUBMITTING, EXECUTION_STATE.POST_SUBMIT_WAITING ],
 		currentState
 	);
-	const showFullLogo = currentState === EXECUTION_STATE.SHOWING_RESULTS;
-	const showCornerLogo = currentState !== EXECUTION_STATE.SHOWING_RESULTS;
 
 	const setNextPlayer = useCallback(
 		() => {
-			const newShuffledPlayers = currentShuffledPlayers.slice(1);
+			if (currentShuffledPlayers.length >= 2) {
+				const newShuffledPlayers = currentShuffledPlayers.slice(1);
 
-			setCurrentState(EXECUTION_STATE.PRE_SUBMIT_WAITING);
-			setCurrentInputPlayer(newShuffledPlayers[0]);
-			setCurrentShuffledPlayers(newShuffledPlayers);
-			setCurrentTick(15);
-			setCurrentCharacterIndex(0);
-			setInputValue('');
+				setCurrentState(EXECUTION_STATE.PRE_SUBMIT_WAITING);
+				setCurrentInputPlayer(newShuffledPlayers[0]);
+				setCurrentShuffledPlayers(newShuffledPlayers);
+				setCurrentTick(15);
+				setCurrentCharacterIndex(0);
+				setInputValue('');
+			} else {
+				roomSocketService.moveNext(roomcode);
+			}
 		},
-		[ currentShuffledPlayers ]
+		[ currentShuffledPlayers, roomcode ]
 	);
 
 	useEffect(
