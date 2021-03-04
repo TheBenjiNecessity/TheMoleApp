@@ -160,7 +160,7 @@ const ExecutionView = ({ roomcode, shuffledPlayers, eliminatedPlayer }) => {
 			</div>
 			{showCornerLogo && (
 				<div className={clsx([ styles.logo, styles['corner-logo'] ])}>
-					<Logo title="The Mole" size={200} textSize={45} withTitle />
+					<Logo title="The Mole" size={200} textSize={45} />
 				</div>
 			)}
 		</div>

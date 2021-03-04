@@ -1,13 +1,13 @@
 import { Fingerprint } from '@material-ui/icons';
 import styles from './styles.module.scss';
 
-const Logo = ({ size, textSize, withTitle, logoColor, textColor }) => {
+const Logo = ({ size, textSize, logoColor, textColor }) => {
 	const moleTextSize = parseInt(textSize);
 	const theTextSize = Math.floor(moleTextSize * 0.8);
 
 	return (
 		<div className={styles.logo}>
-			{withTitle && (
+			{textSize && (
 				<div className={styles.title} style={{ color: textColor }}>
 					<span className={styles.the} style={{ fontSize: theTextSize + 'px' }}>
 						The
