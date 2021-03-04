@@ -16,7 +16,10 @@
 	},
 	"episode_start": {
 		"title": "Episode {{number}}",
-		"first_episode_description": ""
+		"first_episode_description": "In a moment, each player's name will be input into the input box one at a time. If you see a green screen after your name has been entered you are safe. If, however, you see a red screen after your name has been entered then you have been eliminated from the game."
+	},
+	"execution_view": {
+		"first_paragraph": 
 	},
 	"execution_wrapup": {
 		"title": "Wrap up",

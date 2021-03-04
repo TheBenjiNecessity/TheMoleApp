@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import TextInput from '../../common/TextInput';
 import Logo from '../../common/Logo';
 import roomSocketService from '../../services/socket-services/room-socket.service';
+import { useTranslation } from 'react-i18next/*';
 
 const EXECUTION_STATE = {
 	START: 0, // Before showing the player input (Showing a message about seeing red/green screen)
@@ -18,6 +19,8 @@ const EXECUTION_STATE = {
 const CHAR_INPUT_TIMES = [ 900, 750, 1000, 800 ];
 
 const ExecutionView = ({ roomcode, shuffledPlayers, eliminatedPlayer }) => {
+	const { t } = useTranslation('execution_view');
+
 	const allBeforeEl = useMemo(
 		() => {
 			return _.slice(
@@ -131,12 +134,7 @@ const ExecutionView = ({ roomcode, shuffledPlayers, eliminatedPlayer }) => {
 			<div className="panel abs-centered-panel hv-centered-panel">
 				{showStartParagraph && (
 					<div className={styles['start-paragraph']}>
-						<p>
-							In a moment, each player's name will be input into the input box one at a time. If you see a
-							green screen after your name has been entered you are safe for this episode. If, however,
-							you see a red screen after your name has been entered then you have been eliminated from the
-							game.
-						</p>
+						<p>{t('first_paragraph')}</p>
 					</div>
 				)}
 				{showInput && (
