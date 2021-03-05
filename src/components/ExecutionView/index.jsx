@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import TextInput from '../../common/TextInput';
 import Logo from '../../common/Logo';
 import roomSocketService from '../../services/socket-services/room-socket.service';
-import { useTranslation } from 'react-i18next/*';
+import { useTranslation } from 'react-i18next';
 
 const EXECUTION_STATE = {
 	START: 0, // Before showing the player input (Showing a message about seeing red/green screen)
