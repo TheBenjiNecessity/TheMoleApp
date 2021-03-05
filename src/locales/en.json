@@ -1,7 +1,9 @@
 {
 	"common": {
 		"or": "Or",
-		"ready_players": "Ready Players:"
+		"ready_players": "Ready Players:",
+		"title": "The Mole",
+		"title_logo": "<1>The</1><2>Mole</2>"
 	},
 	"lobby": {
 		"roomcode": "Room Code:",
