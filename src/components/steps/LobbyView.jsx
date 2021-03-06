@@ -1,12 +1,8 @@
 import React from 'react';
-//import { useTranslation } from 'react-i18next';
-import AgreePanel from '../common/AgreePanel';
-import TitlePanel from '../common/TitlePanel';
-
-import PlayerListView from '../common/PlayerListView';
-
 import { useTranslation } from 'react-i18next';
-import PlayerList from '../common/PlayerList';
+import AgreePanel from '../../common/AgreePanel';
+import TitlePanel from '../../common/TitlePanel';
+import PlayerList from '../../common/PlayerList';
 
 const LobbyView = ({ room }) => {
 	const { t } = useTranslation('lobby');

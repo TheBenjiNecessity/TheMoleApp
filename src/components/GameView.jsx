@@ -1,16 +1,16 @@
 import React from 'react';
-import WelcomeView from './WelcomeView';
-import EpisodeStartView from './EpisodeStartView';
-import ChallengeView from './ChallengeView';
-import ChallengeIntermissionView from './ChallengeIntermissionView';
-import PreQuizIntermissionView from './PreQuizIntermissionView';
-import QuizView from './QuizView';
-import PostQuizIntermissionView from './PostQuizIntermissionView';
-import ExecutionView from './ExecutionView';
-import ExecutionWrapupView from './ExecutionWrapupView';
+import WelcomeView from './steps/WelcomeView';
+import EpisodeStartView from './steps/EpisodeStartView';
+import ChallengeView from './steps/ChallengeView';
+import ChallengeIntermissionView from './steps/ChallengeIntermissionView';
+import PreQuizIntermissionView from './steps/PreQuizIntermissionView';
+import QuizView from './steps/QuizView';
+import PostQuizIntermissionView from './steps/PostQuizIntermissionView';
+import ExecutionView from './steps/ExecutionView';
+import ExecutionWrapupView from './steps/ExecutionWrapupView';
 import Room from '../models/room.model';
-import LobbyView from './LobbyView';
-import MoleRevealView from './MoleRevealView';
+import LobbyView from './steps/LobbyView';
+import MoleRevealView from './steps/MoleRevealView';
 
 const GameView = ({ room }) => {
 	switch (room.state) {

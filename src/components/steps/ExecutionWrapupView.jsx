@@ -1,7 +1,7 @@
 import React from 'react';
-import TitlePanel from '../common/TitlePanel';
-
 import { useTranslation } from 'react-i18next';
+
+import TitlePanel from '../../common/TitlePanel';
 
 const ExecutionWrapupView = ({ eliminatedPlayer }) => {
 	const { t } = useTranslation('execution_wrapup');

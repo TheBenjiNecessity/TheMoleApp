@@ -1,6 +1,6 @@
 import React from 'react';
-import AgreePanel from '../common/AgreePanel';
-import TitlePanel from '../common/TitlePanel';
+import AgreePanel from '../../common/AgreePanel';
+import TitlePanel from '../../common/TitlePanel';
 
 const WelcomeView = ({ room }) => {
 	return (

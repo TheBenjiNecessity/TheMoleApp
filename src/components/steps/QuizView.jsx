@@ -1,8 +1,8 @@
 import React from 'react';
-import TitlePanel from '../common/TitlePanel';
-
 import { useTranslation } from 'react-i18next';
-import PlayerList from '../common/PlayerList';
+
+import TitlePanel from '../../common/TitlePanel';
+import PlayerList from '../../common/PlayerList';
 
 const QuizView = ({ finishedPlayers }) => {
 	const { t } = useTranslation('quiz');

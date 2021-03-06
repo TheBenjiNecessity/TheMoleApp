@@ -1,5 +1,5 @@
 import React from 'react';
-import TitlePanel from '../common/TitlePanel';
+import TitlePanel from '../../common/TitlePanel';
 
 import { useTranslation } from 'react-i18next';
 

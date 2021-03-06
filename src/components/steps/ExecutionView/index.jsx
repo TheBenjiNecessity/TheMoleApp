@@ -2,9 +2,9 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import * as _ from 'lodash';
 import styles from './styles.module.scss';
 import clsx from 'clsx';
-import TextInput from '../../common/TextInput';
-import Logo from '../../common/Logo';
-import roomSocketService from '../../services/socket-services/room-socket.service';
+import TextInput from '../../../common/TextInput';
+import Logo from '../../../common/Logo';
+import roomSocketService from '../../../services/socket-services/room-socket.service';
 import { useTranslation } from 'react-i18next';
 
 const EXECUTION_STATE = {
