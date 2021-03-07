@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
-
 const ChallengeView = ({ challenge }) => {
-	const ChallengeComponent = React.lazy(() => import(`../challenges/${challenge.type}`));
+	const ChallengeComponent = React.lazy(() => import(`../../challenges/${challenge.type}`));
 
 	return (
 		<Suspense fallback={<div>Loading...</div>}>

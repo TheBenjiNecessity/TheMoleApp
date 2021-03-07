@@ -1,0 +1,19 @@
+@import "../styles/colors";
+
+.top-bar {
+	display: flex;
+	flex-direction: row;
+	padding: 1rem;
+	height: 45px;
+
+	.title {
+		flex-grow: 1;
+		font-size: 35px;
+	}
+}
+
+.main {
+	height: 100%;
+	width: 100%;
+	background: $v-gradient-background;
+}
