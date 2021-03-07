@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+
 const ChallengeView = ({ challenge }) => {
 	const ChallengeComponent = React.lazy(() => import(`../../challenges/${challenge.type}`));
 
