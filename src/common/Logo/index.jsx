@@ -1,3 +1,4 @@
+import React from 'react';
 import { Fingerprint } from '@material-ui/icons';
 import { Trans } from 'react-i18next';
 import styles from './styles.module.scss';

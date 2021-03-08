@@ -27,35 +27,24 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "jest",
+		"test": "jest --detectOpenHandles",
 		"eject": "react-scripts eject",
 		"electron-start": "electron ."
 	},
 	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
+		"extends": [ "react-app", "react-app/jest" ]
 	},
 	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+		"production": [ ">0.2%", "not dead", "not op_mini all" ],
+		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
 	},
 	"devDependencies": {
+		"@babel/core": "^7.13.8",
+		"@babel/preset-env": "^7.13.9",
+		"babel-jest": "^26.6.3",
+		"babel-plugin-transform-class-properties": "^6.24.1",
 		"electron": "^11.2.2",
 		"enzyme": "^3.11.0",
-		"enzyme-adapter-react-16": "^1.15.6",
-		"jest": "^26.6.3"
-	},
-	"jest": {
-		"verbose": true
+		"enzyme-adapter-react-16": "^1.15.6"
 	}
 }
