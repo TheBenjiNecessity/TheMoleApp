@@ -9,14 +9,16 @@ const LobbyView = ({ room }) => {
 	return (
 		<div className="panel centered-panel centered-panel-medium next-panel">
 			<div className="form-group pl-xs-0 pr-xs-0 mt-0 col-sm-6">
-				<label>{t('roomcode')}</label>
-				<div className="room-code">{room ? room.roomcode : 'No Code'}</div>
+				<label data-testid="roomcodeLabel">{t('roomcode')}</label>
+				<div className="room-code" data-testid="roomcode">
+					{room ? room.roomcode : 'No Code'}
+				</div>
 			</div>
 			<div className="form-group pl-xs-0 pr-xs-0 mt-0 col-sm-6">
-				<label>{t('player_plural')}</label>
-				<PlayerList players={room.players} xs={12} />
+				<label data-testid="playerListLabel">{t('player_plural')}</label>
+				<PlayerList players={room.players} xs={12} data-testid="playerList" />
 			</div>
-			<AgreePanel room={room} inline />
+			<AgreePanel room={room} inline data-testid="agreePanel" />
 		</div>
 	);
 };

@@ -21,7 +21,7 @@ const GameView = ({ room }) => {
 	function getStep() {
 		switch (room.state) {
 			case Room.ROOM_STATES.LOBBY:
-				return <LobbyView room={room} />;
+				return <LobbyView room={room} data-testid="lobby" />;
 			case Room.ROOM_STATES.WELCOME:
 				return <WelcomeView room={room} />;
 			case Room.ROOM_STATES.MOLE_REVEAL:
