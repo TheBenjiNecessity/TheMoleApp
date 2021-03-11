@@ -1,3 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MyComponent should render correctly 1`] = `ShallowWrapper {}`;
+exports[`MyComponent should render correctly 1`] = `
+<div>
+  <div>
+    <div>
+      Lobby
+    </div>
+    <div>
+      <Logo
+        size={200}
+        textSize={45}
+      />
+    </div>
+  </div>
+  <LobbyView
+    data-testid="lobby"
+    room={
+      Room {
+        "agreedPlayers": Array [],
+        "episodes": Array [],
+        "players": Array [
+          Object {
+            "name": "test1",
+          },
+          Object {
+            "name": "test2",
+          },
+          Object {
+            "name": "test3",
+          },
+          Object {
+            "name": "test4",
+          },
+          Object {
+            "name": "test5",
+          },
+          Object {
+            "name": "test6",
+          },
+          Object {
+            "name": "test7",
+          },
+          Object {
+            "name": "test8",
+          },
+          Object {
+            "name": "test9",
+          },
+          Object {
+            "name": "test10",
+          },
+        ],
+        "raisedHands": Object {},
+        "roomcode": "TEST",
+        "state": "lobby",
+      }
+    }
+  />
+</div>
+`;
