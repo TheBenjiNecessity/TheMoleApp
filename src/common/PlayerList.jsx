@@ -9,8 +9,8 @@ const PlayerList = ({ players, animate, inline, xl, lg, md, sm, xs }) => {
 	return players.map((player, i) => {
 		if (inline) {
 			return (
-				<div className="inline">
-					<PlayerListView animate={animate} key={i} player={player} />
+				<div key={i} className="inline">
+					<PlayerListView animate={animate} player={player} />
 				</div>
 			);
 		}
@@ -38,8 +38,8 @@ const PlayerList = ({ players, animate, inline, xl, lg, md, sm, xs }) => {
 		}
 
 		return (
-			<div className={className}>
-				<PlayerListView animate={animate} key={i} player={player} />
+			<div key={i} className={className}>
+				<PlayerListView animate={animate} player={player} />
 			</div>
 		);
 	});
