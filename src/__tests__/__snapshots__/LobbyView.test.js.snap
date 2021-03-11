@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyComponent should render lobby correctly 1`] = `
+<div
+  className="panel centered-panel centered-panel-medium next-panel"
+>
+  <div
+    className="form-group pl-xs-0 pr-xs-0 mt-0 col-sm-6"
+  >
+    <label
+      data-testid="roomcodeLabel"
+    >
+      Room Code:
+    </label>
+    <div
+      className="room-code"
+      data-testid="roomcode"
+    >
+      TEST
+    </div>
+  </div>
+  <div
+    className="form-group pl-xs-0 pr-xs-0 mt-0 col-sm-6"
+  >
+    <label
+      data-testid="playerListLabel"
+    >
+      Players:
+    </label>
+    <PlayerList
+      data-testid="playerList"
+      players={
+        Array [
+          Object {
+            "name": "test1",
+          },
+          Object {
+            "name": "test2",
+          },
+          Object {
+            "name": "test3",
+          },
+          Object {
+            "name": "test4",
+          },
+          Object {
+            "name": "test5",
+          },
+          Object {
+            "name": "test6",
+          },
+          Object {
+            "name": "test7",
+          },
+          Object {
+            "name": "test8",
+          },
+          Object {
+            "name": "test9",
+          },
+          Object {
+            "name": "test10",
+          },
+        ]
+      }
+      xs={12}
+    />
+  </div>
+  <AgreePanel
+    data-testid="agreePanel"
+    inline={true}
+    room={
+      Room {
+        "agreedPlayers": Array [],
+        "episodes": Array [],
+        "players": Array [
+          Object {
+            "name": "test1",
+          },
+          Object {
+            "name": "test2",
+          },
+          Object {
+            "name": "test3",
+          },
+          Object {
+            "name": "test4",
+          },
+          Object {
+            "name": "test5",
+          },
+          Object {
+            "name": "test6",
+          },
+          Object {
+            "name": "test7",
+          },
+          Object {
+            "name": "test8",
+          },
+          Object {
+            "name": "test9",
+          },
+          Object {
+            "name": "test10",
+          },
+        ],
+        "raisedHands": Object {},
+        "roomcode": "TEST",
+        "state": "lobby",
+      }
+    }
+  />
+</div>
+`;
