@@ -14,7 +14,7 @@ export class Routes extends Component {
 			<HashRouter>
 				<Route path="/Game" component={Game} />
 				<Route path="/Test" component={Test} />
-				<Route exact path="/" component={Test} />
+				<Route exact path="/" component={Home} />
 			</HashRouter>
 		);
 	}
