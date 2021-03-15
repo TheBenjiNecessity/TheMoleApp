@@ -5,6 +5,7 @@ import './full-screen-loader.scss';
 
 const FullScreenLoader = ({ loading, children }) => {
 	const [ containerEl ] = useState(document.createElement('div'));
+
 	useEffect(
 		() => {
 			document.body.appendChild(containerEl);
