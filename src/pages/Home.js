@@ -35,12 +35,10 @@ const Home = () => {
 
 	return (
 		<div className="main">
-			<div className="panel centered-panel centered-panel-medium">
-				<div className="form-group pl-xs-0 pr-xs-0 mt-xs-0">
-					<button type="button" className="button button-primary" onClick={onHost}>
-						{t('start')}
-					</button>
-				</div>
+			<div className="panel abs-centered-panel hv-centered-panel">
+				<button type="button" className="button button-primary" onClick={onHost}>
+					{t('start')}
+				</button>
 			</div>
 			<FullScreenLoader loading={loading}>{t('loading')}</FullScreenLoader>
 		</div>
