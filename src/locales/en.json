@@ -3,7 +3,9 @@
 		"or": "Or",
 		"ready_players": "Ready Players:",
 		"title": "The Mole",
-		"title_logo": "<1>The</1><2>Mole</2>"
+		"title_logo": "<1>The</1><2>Mole</2>",
+		"start": "Start",
+		"loading": "Loading"
 	},
 	"lobby": {
 		"roomcode": "Room Code:",
