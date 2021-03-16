@@ -2,12 +2,14 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import AgreePanel from '../../common/AgreePanel';
 import PlayerList from '../../common/PlayerList';
+import TopBarTitle from '../../common/TopBarTitle';
 
 const LobbyView = ({ room }) => {
 	const { t } = useTranslation('lobby');
 
 	return (
 		<div className="panel centered-panel centered-panel-medium next-panel">
+			<TopBarTitle>Lobby</TopBarTitle>
 			<div className="form-group pl-xs-0 pr-xs-0 mt-0 col-sm-6">
 				<label data-testid="roomcodeLabel">{t('roomcode')}</label>
 				<div className="room-code" data-testid="roomcode">
