@@ -25,16 +25,19 @@ const Game = () => {
 	// On mount, check to see if a room already exists in storage. If it does,
 	// then look for that same room on the server and get the most up to date
 	// version.
-	useEffect(() => {
-		if (room) {
-			setLoading(true);
-			roomService.getRoom(room.roomcode).then(({ room: newRoom }) => {
-				setLoading(false);
+	useEffect(
+		() => {
+			if (room) {
+				setLoading(true);
+				roomService.getRoom(room.roomcode).then(({ room: newRoom }) => {
+					setLoading(false);
 
-				__setRoom(newRoom);
-			});
-		}
-	}, []);
+					__setRoom(newRoom);
+				});
+			}
+		},
+		[ room ]
+	);
 
 	function __setRoom(room) {
 		storageService.setRoom(room);
