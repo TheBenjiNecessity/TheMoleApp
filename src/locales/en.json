@@ -5,9 +5,11 @@
 		"title": "The Mole",
 		"title_logo": "<1>The</1><2>Mole</2>",
 		"start": "Start",
-		"loading": "Loading"
+		"loading": "Loading",
+		"no-code": "No Code"
 	},
 	"lobby": {
+		"title": "Lobby",
 		"roomcode": "Room Code:",
 		"player": "Player:",
 		"player_plural": "Players:"
