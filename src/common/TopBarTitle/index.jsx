@@ -9,7 +9,11 @@ const TopBarTitle = ({ children }) => {
 	useEffect(
 		() => {
 			const topbar = document.getElementById('topbar');
+
+			if (topbar) {
 			topbar.prepend(containerEl);
+			}
+
 			return () => {
 				topbar.removeChild(containerEl);
 			};
