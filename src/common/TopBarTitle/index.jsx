@@ -11,7 +11,7 @@ const TopBarTitle = ({ children }) => {
 			const topbar = document.getElementById('topbar');
 
 			if (topbar) {
-			topbar.prepend(containerEl);
+				topbar.prepend(containerEl);
 			}
 
 			return () => {
@@ -21,7 +21,12 @@ const TopBarTitle = ({ children }) => {
 		[ containerEl ]
 	);
 
-	return ReactDOM.createPortal(<span className="titleText">{children}</span>, containerEl);
+	return ReactDOM.createPortal(
+		<span className="titleText" data-testid="title-text">
+			{children}
+		</span>,
+		containerEl
+	);
 };
 
 export default TopBarTitle;
