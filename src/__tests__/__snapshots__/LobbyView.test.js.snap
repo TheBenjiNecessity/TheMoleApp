@@ -1,115 +1,399 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MyComponent should render lobby correctly 1`] = `
-<div
-  className="panel centered-panel centered-panel-medium next-panel"
+<LobbyView
+  room={
+    Room {
+      "agreedPlayers": Array [],
+      "episodes": Array [],
+      "players": Array [
+        Object {
+          "name": "test1",
+        },
+        Object {
+          "name": "test2",
+        },
+        Object {
+          "name": "test3",
+        },
+        Object {
+          "name": "test4",
+        },
+        Object {
+          "name": "test5",
+        },
+        Object {
+          "name": "test6",
+        },
+        Object {
+          "name": "test7",
+        },
+        Object {
+          "name": "test8",
+        },
+        Object {
+          "name": "test9",
+        },
+        Object {
+          "name": "test10",
+        },
+      ],
+      "raisedHands": Object {},
+      "roomcode": "TEST",
+      "state": "lobby",
+    }
+  }
 >
   <div
-    className="form-group pl-xs-0 pr-xs-0 mt-0 col-sm-6"
+    className="panel centered-panel centered-panel-medium next-panel"
   >
-    <label
-      data-testid="roomcodeLabel"
-    >
-      Room Code:
-    </label>
+    <TopBarTitle>
+      <Portal
+        containerInfo={
+          <div>
+            <span
+              class="titleText"
+              data-testid="title-text"
+            >
+              title
+            </span>
+          </div>
+        }
+      >
+        <span
+          className="titleText"
+          data-testid="title-text"
+        >
+          title
+        </span>
+      </Portal>
+    </TopBarTitle>
     <div
-      className="room-code"
-      data-testid="roomcode"
+      className="form-group pl-xs-0 pr-xs-0 mt-0 col-sm-6"
     >
-      TEST
+      <label
+        data-testid="roomcode-label"
+      >
+        roomcode
+      </label>
+      <div
+        className="room-code"
+        data-testid="roomcode"
+      >
+        TEST
+      </div>
     </div>
-  </div>
-  <div
-    className="form-group pl-xs-0 pr-xs-0 mt-0 col-sm-6"
-  >
-    <label
-      data-testid="playerListLabel"
+    <div
+      className="form-group pl-xs-0 pr-xs-0 mt-0 col-sm-6"
     >
-      Players:
-    </label>
-    <PlayerList
-      data-testid="playerList"
-      players={
-        Array [
-          Object {
-            "name": "test1",
-          },
-          Object {
-            "name": "test2",
-          },
-          Object {
-            "name": "test3",
-          },
-          Object {
-            "name": "test4",
-          },
-          Object {
-            "name": "test5",
-          },
-          Object {
-            "name": "test6",
-          },
-          Object {
-            "name": "test7",
-          },
-          Object {
-            "name": "test8",
-          },
-          Object {
-            "name": "test9",
-          },
-          Object {
-            "name": "test10",
-          },
-        ]
+      <label
+        data-testid="player-list-label"
+      >
+        player_plural
+      </label>
+      <PlayerList
+        data-testid="player-list"
+        players={
+          Array [
+            Object {
+              "name": "test1",
+            },
+            Object {
+              "name": "test2",
+            },
+            Object {
+              "name": "test3",
+            },
+            Object {
+              "name": "test4",
+            },
+            Object {
+              "name": "test5",
+            },
+            Object {
+              "name": "test6",
+            },
+            Object {
+              "name": "test7",
+            },
+            Object {
+              "name": "test8",
+            },
+            Object {
+              "name": "test9",
+            },
+            Object {
+              "name": "test10",
+            },
+          ]
+        }
+        xs={12}
+      >
+        <div
+          className=" col-xs-12"
+          key="0"
+        >
+          <PlayerListView
+            player={
+              Object {
+                "name": "test1",
+              }
+            }
+          >
+            <BlockLabel>
+              <label
+                className=""
+                style={null}
+              >
+                test1
+              </label>
+            </BlockLabel>
+          </PlayerListView>
+        </div>
+        <div
+          className=" col-xs-12"
+          key="1"
+        >
+          <PlayerListView
+            player={
+              Object {
+                "name": "test2",
+              }
+            }
+          >
+            <BlockLabel>
+              <label
+                className=""
+                style={null}
+              >
+                test2
+              </label>
+            </BlockLabel>
+          </PlayerListView>
+        </div>
+        <div
+          className=" col-xs-12"
+          key="2"
+        >
+          <PlayerListView
+            player={
+              Object {
+                "name": "test3",
+              }
+            }
+          >
+            <BlockLabel>
+              <label
+                className=""
+                style={null}
+              >
+                test3
+              </label>
+            </BlockLabel>
+          </PlayerListView>
+        </div>
+        <div
+          className=" col-xs-12"
+          key="3"
+        >
+          <PlayerListView
+            player={
+              Object {
+                "name": "test4",
+              }
+            }
+          >
+            <BlockLabel>
+              <label
+                className=""
+                style={null}
+              >
+                test4
+              </label>
+            </BlockLabel>
+          </PlayerListView>
+        </div>
+        <div
+          className=" col-xs-12"
+          key="4"
+        >
+          <PlayerListView
+            player={
+              Object {
+                "name": "test5",
+              }
+            }
+          >
+            <BlockLabel>
+              <label
+                className=""
+                style={null}
+              >
+                test5
+              </label>
+            </BlockLabel>
+          </PlayerListView>
+        </div>
+        <div
+          className=" col-xs-12"
+          key="5"
+        >
+          <PlayerListView
+            player={
+              Object {
+                "name": "test6",
+              }
+            }
+          >
+            <BlockLabel>
+              <label
+                className=""
+                style={null}
+              >
+                test6
+              </label>
+            </BlockLabel>
+          </PlayerListView>
+        </div>
+        <div
+          className=" col-xs-12"
+          key="6"
+        >
+          <PlayerListView
+            player={
+              Object {
+                "name": "test7",
+              }
+            }
+          >
+            <BlockLabel>
+              <label
+                className=""
+                style={null}
+              >
+                test7
+              </label>
+            </BlockLabel>
+          </PlayerListView>
+        </div>
+        <div
+          className=" col-xs-12"
+          key="7"
+        >
+          <PlayerListView
+            player={
+              Object {
+                "name": "test8",
+              }
+            }
+          >
+            <BlockLabel>
+              <label
+                className=""
+                style={null}
+              >
+                test8
+              </label>
+            </BlockLabel>
+          </PlayerListView>
+        </div>
+        <div
+          className=" col-xs-12"
+          key="8"
+        >
+          <PlayerListView
+            player={
+              Object {
+                "name": "test9",
+              }
+            }
+          >
+            <BlockLabel>
+              <label
+                className=""
+                style={null}
+              >
+                test9
+              </label>
+            </BlockLabel>
+          </PlayerListView>
+        </div>
+        <div
+          className=" col-xs-12"
+          key="9"
+        >
+          <PlayerListView
+            player={
+              Object {
+                "name": "test10",
+              }
+            }
+          >
+            <BlockLabel>
+              <label
+                className=""
+                style={null}
+              >
+                test10
+              </label>
+            </BlockLabel>
+          </PlayerListView>
+        </div>
+      </PlayerList>
+    </div>
+    <AgreePanel
+      data-testid="agree-panel"
+      inline={true}
+      room={
+        Room {
+          "agreedPlayers": Array [],
+          "episodes": Array [],
+          "players": Array [
+            Object {
+              "name": "test1",
+            },
+            Object {
+              "name": "test2",
+            },
+            Object {
+              "name": "test3",
+            },
+            Object {
+              "name": "test4",
+            },
+            Object {
+              "name": "test5",
+            },
+            Object {
+              "name": "test6",
+            },
+            Object {
+              "name": "test7",
+            },
+            Object {
+              "name": "test8",
+            },
+            Object {
+              "name": "test9",
+            },
+            Object {
+              "name": "test10",
+            },
+          ],
+          "raisedHands": Object {},
+          "roomcode": "TEST",
+          "state": "lobby",
+        }
       }
-      xs={12}
-    />
+    >
+      <p>
+        ready_players
+      </p>
+      <PlayerList
+        inline={true}
+        players={Array []}
+      />
+    </AgreePanel>
   </div>
-  <AgreePanel
-    data-testid="agreePanel"
-    inline={true}
-    room={
-      Room {
-        "agreedPlayers": Array [],
-        "episodes": Array [],
-        "players": Array [
-          Object {
-            "name": "test1",
-          },
-          Object {
-            "name": "test2",
-          },
-          Object {
-            "name": "test3",
-          },
-          Object {
-            "name": "test4",
-          },
-          Object {
-            "name": "test5",
-          },
-          Object {
-            "name": "test6",
-          },
-          Object {
-            "name": "test7",
-          },
-          Object {
-            "name": "test8",
-          },
-          Object {
-            "name": "test9",
-          },
-          Object {
-            "name": "test10",
-          },
-        ],
-        "raisedHands": Object {},
-        "roomcode": "TEST",
-        "state": "lobby",
-      }
-    }
-  />
-</div>
+</LobbyView>
 `;
