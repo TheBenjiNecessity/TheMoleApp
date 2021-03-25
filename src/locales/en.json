@@ -14,7 +14,9 @@
 		"player": "Player:",
 		"player_plural": "Players:"
 	},
-	"welcome": {},
+	"welcome": {
+		"title": "Welcome"
+	},
 	"mole_reveal_view": {
 		"title": "Who is the mole?",
 		"first_paragraph": "Look at your devices now to see whether or not you have been selected to be the mole.",
@@ -31,6 +33,7 @@
 		"executed_player_0": "We're sad to see {{playerName}} go. They will be missed."
 	},
 	"challenge_intermission": {
+		"title": "Challenge Intermission",
 		"generic_text": "generic_text"
 	},
 	"pre_quiz_intermission": {
