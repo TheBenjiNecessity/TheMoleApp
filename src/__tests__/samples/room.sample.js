@@ -3,8 +3,6 @@ import Room from '../../models/room.model';
 const MAX_PLAYERS = 10;
 
 const roomSample = {
-	maxPlayers: 10,
-
 	sampleRoom: function({ numPlayers = 10, state = 'lobby', roomcode = 'TEST' } = {}) {
 		if (numPlayers > MAX_PLAYERS) {
 			return null;
