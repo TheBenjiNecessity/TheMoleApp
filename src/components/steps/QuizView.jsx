@@ -14,7 +14,7 @@ const QuizView = ({ finishedPlayers }) => {
 			<p>{t('first_paragraph')}</p>
 
 			<p>{t('players_done')}</p>
-			<PlayerList players={finishedPlayers} inline />
+			<PlayerList players={finishedPlayers} inline data-testid="player-list" />
 		</div>
 	);
 };
