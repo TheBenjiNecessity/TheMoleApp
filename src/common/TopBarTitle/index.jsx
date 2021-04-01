@@ -1,9 +1,10 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import Logo from '../Logo';
 
 import styles from './top-bar-title.module.scss';
 
-const TopBarTitle = ({ children }) => {
+const TopBarTitle = ({ title, hasLogo }) => {
 	const [ containerEl ] = useState(document.createElement('div'));
 
 	useEffect(
@@ -22,9 +23,10 @@ const TopBarTitle = ({ children }) => {
 	);
 
 	return ReactDOM.createPortal(
-		<span className="titleText" data-testid="title-text">
-			{children}
-		</span>,
+		<div className={styles.title} data-testid="title-text">
+			<span className={styles['title-text']}>{title}</span>
+			{hasLogo && <Logo size={200} textSize={45} />}
+		</div>,
 		containerEl
 	);
 };

@@ -8,9 +8,9 @@ const WelcomeView = ({ room }) => {
 
 	return (
 		<div className="panel centered-panel centered-panel-medium next-panel">
-			<TopBarTitle>{t('title')}</TopBarTitle>
+			<TopBarTitle title={t('title')} hasLogo={true} />
 
-			<AgreePanel room={room} xl={6} lg={6} md={6} sm={12} xs={12} />
+			<AgreePanel room={room} xl={6} lg={6} md={6} sm={12} xs={12} data-testid="agree-panel" />
 		</div>
 	);
 };

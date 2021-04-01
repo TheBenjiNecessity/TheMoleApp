@@ -8,7 +8,7 @@ const ExecutionWrapupView = ({ eliminatedPlayer }) => {
 
 	return (
 		<div className="panel centered-panel centered-panel-medium next-panel">
-			<TopBarTitle>{t('title')}</TopBarTitle>
+			<TopBarTitle title={t('title')} hasLogo={true} />
 
 			<div>{t('executed_player_0', { playerName: eliminatedPlayer.name })}</div>
 		</div>

@@ -30,8 +30,7 @@ hr {
 	padding: 1rem;
 	height: 45px;
 
-	.title {
-		flex-grow: 1;
-		font-size: 35px;
+	> div {
+		width: 100%;
 	}
 }

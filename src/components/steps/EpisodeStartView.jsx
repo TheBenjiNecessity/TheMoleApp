@@ -8,7 +8,7 @@ const EpisodeStartView = ({ previousEpisode, episodeIndex }) => {
 
 	return (
 		<div className="panel centered-panel centered-panel-medium next-panel">
-			<TopBarTitle>{`Episode ${episodeIndex}`}</TopBarTitle>
+			<TopBarTitle title={t('title')} hasLogo={true} />
 
 			{previousEpisode ? (
 				<div>{previousEpisode.finalDescription}</div>

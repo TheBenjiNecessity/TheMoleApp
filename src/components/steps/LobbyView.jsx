@@ -9,7 +9,7 @@ const LobbyView = ({ room }) => {
 
 	return (
 		<div className="panel centered-panel centered-panel-medium next-panel">
-			<TopBarTitle>{t('title')}</TopBarTitle>
+			<TopBarTitle title={t('title')} hasLogo={true} />
 			<div className="form-group pl-xs-0 pr-xs-0 mt-0 col-sm-6">
 				<label data-testid="roomcode-label">{t('roomcode')}</label>
 				<div className="room-code" data-testid="roomcode">

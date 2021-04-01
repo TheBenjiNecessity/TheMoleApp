@@ -9,7 +9,7 @@ const QuizView = ({ finishedPlayers }) => {
 
 	return (
 		<div className="panel centered-panel centered-panel-medium next-panel">
-			<TopBarTitle>{t('title')}</TopBarTitle>
+			<TopBarTitle title={t('title')} hasLogo={true} />
 
 			<p>{t('first_paragraph')}</p>
 

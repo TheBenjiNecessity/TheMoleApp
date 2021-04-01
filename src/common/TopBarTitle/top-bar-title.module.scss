@@ -1,1 +1,9 @@
+.title {
+	display: flex;
+	align-items: flex-start;
+	font-size: 35px;
+}
 
+.title-text {
+	flex-grow: 1;
+}

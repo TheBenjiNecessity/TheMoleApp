@@ -8,7 +8,7 @@ const ChallengeIntermissionView = ({ intermissionText }) => {
 
 	return (
 		<div className="panel centered-panel centered-panel-medium next-panel">
-			<TopBarTitle>{t('title')}</TopBarTitle>
+			<TopBarTitle title={t('title')} hasLogo={true} />
 
 			<div>{intermissionText ? <p>{intermissionText}</p> : <p>{t('generic_text')}</p>}</div>
 		</div>
