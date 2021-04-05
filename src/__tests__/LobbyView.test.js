@@ -6,7 +6,7 @@ import roomSample from './samples/room.sample';
 import PlayerList from '../common/PlayerList';
 import AgreePanel from '../common/AgreePanel';
 
-describe('MyComponent', () => {
+describe('LobbyView', () => {
 	let room = {};
 
 	beforeEach(() => {

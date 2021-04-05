@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MyComponent should render correctly 1`] = `
+exports[`GameView should render correctly 1`] = `
 <LobbyView
   data-testid="lobby"
   room={
