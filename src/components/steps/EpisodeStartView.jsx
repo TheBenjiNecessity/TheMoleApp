@@ -10,11 +10,7 @@ const EpisodeStartView = ({ previousEpisode, episodeIndex }) => {
 		<div className="panel centered-panel centered-panel-medium next-panel">
 			<TopBarTitle title={t('title')} hasLogo={true} />
 
-			{previousEpisode ? (
-				<div>{previousEpisode.finalDescription}</div>
-			) : (
-				<div>{t('first_episode_description')}</div>
-			)}
+			{previousEpisode ? <p>{previousEpisode.finalDescription}</p> : <p>{t('first_episode_description')}</p>}
 		</div>
 	);
 };

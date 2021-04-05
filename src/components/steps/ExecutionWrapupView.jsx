@@ -10,7 +10,7 @@ const ExecutionWrapupView = ({ eliminatedPlayer }) => {
 		<div className="panel centered-panel centered-panel-medium next-panel">
 			<TopBarTitle title={t('title')} hasLogo={true} />
 
-			<div>{t('executed_player_0', { playerName: eliminatedPlayer.name })}</div>
+			<p>{t('executed_player_0', { playerName: eliminatedPlayer.name })}</p>
 		</div>
 	);
 };
