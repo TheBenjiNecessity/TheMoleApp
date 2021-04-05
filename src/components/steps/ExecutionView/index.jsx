@@ -1,11 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import * as _ from 'lodash';
-import styles from './styles.module.scss';
-import clsx from 'clsx';
-import TextInput from '../../../common/TextInput';
-import Logo from '../../../common/Logo';
 import roomSocketService from '../../../services/socket-services/room-socket.service';
-import { useTranslation } from 'react-i18next';
+import View from './view';
 
 const EXECUTION_STATE = {
 	START: 0, // Before showing the player input (Showing a message about seeing red/green screen)
@@ -19,8 +15,6 @@ const EXECUTION_STATE = {
 const CHAR_INPUT_TIMES = [ 900, 750, 1000, 800 ];
 
 const ExecutionView = ({ roomcode, shuffledPlayers, eliminatedPlayer }) => {
-	const { t } = useTranslation('execution_view');
-
 	const allBeforeEl = useMemo(
 		() => {
 			return _.slice(
@@ -39,14 +33,6 @@ const ExecutionView = ({ roomcode, shuffledPlayers, eliminatedPlayer }) => {
 	const [ currentState, setCurrentState ] = useState(EXECUTION_STATE.START);
 	const [ inputValue, setInputValue ] = useState('');
 	const [ cursor, setCursor ] = useState('|');
-
-	const showStartParagraph = currentState === EXECUTION_STATE.START;
-	const showFullLogo = currentState === EXECUTION_STATE.SHOWING_RESULTS;
-	const showCornerLogo = currentState !== EXECUTION_STATE.SHOWING_RESULTS;
-	const showInput = _.includes(
-		[ EXECUTION_STATE.PRE_SUBMIT_WAITING, EXECUTION_STATE.SUBMITTING, EXECUTION_STATE.POST_SUBMIT_WAITING ],
-		currentState
-	);
 
 	const setNextPlayer = useCallback(
 		() => {
@@ -123,45 +109,11 @@ const ExecutionView = ({ roomcode, shuffledPlayers, eliminatedPlayer }) => {
 	);
 
 	return (
-		<div
-			className={clsx([
-				styles.execution,
-				currentState === EXECUTION_STATE.SHOWING_RESULTS && styles['execution-end'],
-				eliminatedPlayer.name === currentInputPlayer.name && styles.fail,
-				eliminatedPlayer.name !== currentInputPlayer.name && styles.success
-			])}
-		>
-			<div className="panel abs-centered-panel hv-centered-panel">
-				{showStartParagraph && (
-					<div className={styles['start-paragraph']}>
-						<p>{t('first_paragraph')}</p>
-					</div>
-				)}
-				{showInput && (
-					<label className={styles.inputLabel}>
-						<span className={styles.text}>Name:</span>
-						<span className={styles.input}>
-							<TextInput value={`${inputValue}${cursor}`} />
-						</span>
-					</label>
-				)}
-				{showFullLogo && (
-					<div
-						className={clsx([
-							eliminatedPlayer.name === currentInputPlayer.name && styles.fail,
-							eliminatedPlayer.name !== currentInputPlayer.name && styles.success
-						])}
-					>
-						<Logo size={400} logoColor="white" />
-					</div>
-				)}
-			</div>
-			{showCornerLogo && (
-				<div className={clsx([ styles.logo, styles['corner-logo'] ])}>
-					<Logo size={200} textSize={45} />
-				</div>
-			)}
-		</div>
+		<View
+			currentState={currentState}
+			wasExecuted={eliminatedPlayer.name === currentInputPlayer.name}
+			inputValue={`${inputValue}${cursor}`}
+		/>
 	);
 };
 
