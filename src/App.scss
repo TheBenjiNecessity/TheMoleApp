@@ -24,13 +24,6 @@ hr {
 	margin: 1rem 0;
 }
 
-.top-bar {
-	display: flex;
-	flex-direction: row;
-	padding: 1rem;
-	height: 45px;
-
-	> div {
-		width: 100%;
-	}
+.top-bar > div {
+	width: 100%;
 }
