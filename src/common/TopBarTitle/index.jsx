@@ -23,8 +23,10 @@ const TopBarTitle = ({ title, hasLogo }) => {
 	);
 
 	return ReactDOM.createPortal(
-		<div className={styles.title} data-testid="title-text">
-			<span className={styles['title-text']}>{title}</span>
+		<div className={styles.title}>
+			<span className={styles['title-text']} data-testid="title-text">
+				{title}
+			</span>
 			{hasLogo && <Logo size={200} textSize={45} />}
 		</div>,
 		containerEl
