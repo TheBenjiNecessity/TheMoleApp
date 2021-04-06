@@ -8,7 +8,7 @@ import Logo from '../../../common/Logo';
 
 import styles from './styles.module.scss';
 
-const EXECUTION_STATE = {
+export const EXECUTION_STATE = {
 	START: 0, // Before showing the player input (Showing a message about seeing red/green screen)
 	PRE_SUBMIT_WAITING: 1, // Player input is showing but typing hasn't started
 	SUBMITTING: 2, // Characters are being typed into the input
