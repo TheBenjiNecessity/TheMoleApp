@@ -54,27 +54,38 @@ exports[`WelcomeView should render welcome correctly 1`] = `
       <Portal
         containerInfo={
           <div>
-            <div>
+            <div
+              class="title"
+            >
               <span
+                class="title-text"
                 data-testid="title-text"
               >
                 title
               </span>
-              <div>
-                <div>
+              <div
+                class="logo"
+              >
+                <div
+                  class="title"
+                >
                   .
                   <div
+                    class="the"
                     style="font-size: 36px;"
                   >
                     The
                   </div>
                   <div
+                    class="mole"
                     style="font-size: 45px;"
                   >
                     Mole
                   </div>
                 </div>
-                <div>
+                <div
+                  class="svg"
+                >
                   <svg
                     aria-hidden="true"
                     class="MuiSvgIcon-root"
@@ -92,8 +103,11 @@ exports[`WelcomeView should render welcome correctly 1`] = `
           </div>
         }
       >
-        <div>
+        <div
+          className="title"
+        >
           <span
+            className="title-text"
             data-testid="title-text"
           >
             title
@@ -102,8 +116,11 @@ exports[`WelcomeView should render welcome correctly 1`] = `
             size={200}
             textSize={45}
           >
-            <div>
+            <div
+              className="logo"
+            >
               <div
+                className="title"
                 style={
                   Object {
                     "color": undefined,
@@ -115,6 +132,7 @@ exports[`WelcomeView should render welcome correctly 1`] = `
                 >
                   .
                   <div
+                    className="the"
                     key="1"
                     style={
                       Object {
@@ -125,6 +143,7 @@ exports[`WelcomeView should render welcome correctly 1`] = `
                     The
                   </div>
                   <div
+                    className="mole"
                     key="2"
                     style={
                       Object {
@@ -137,6 +156,7 @@ exports[`WelcomeView should render welcome correctly 1`] = `
                 </Trans>
               </div>
               <div
+                className="svg"
                 style={
                   Object {
                     "color": undefined,

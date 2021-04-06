@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExecutionView should render execution view correctly {currentState: EXECUTION_STATE.LOADING_RESULTS, wasExecuted=false inputValue=test} 1`] = `
+<div
+  className="execution success"
+>
+  <div
+    className="panel abs-centered-panel hv-centered-panel"
+  />
+  <div
+    className="logo corner-logo"
+  >
+    <Logo
+      size={200}
+      textSize={45}
+    />
+  </div>
+</div>
+`;
+
+exports[`ExecutionView should render execution view correctly {currentState: EXECUTION_STATE.POST_SUBMIT_WAITING, wasExecuted=false inputValue=test} 1`] = `
+<div
+  className="execution success"
+>
+  <div
+    className="panel abs-centered-panel hv-centered-panel"
+  >
+    <label
+      className="inputLabel"
+    >
+      <span
+        className="text"
+      >
+        Name:
+      </span>
+      <span
+        className="input"
+      >
+        <TextInput
+          value="test"
+        />
+      </span>
+    </label>
+  </div>
+  <div
+    className="logo corner-logo"
+  >
+    <Logo
+      size={200}
+      textSize={45}
+    />
+  </div>
+</div>
+`;
+
+exports[`ExecutionView should render execution view correctly {currentState: EXECUTION_STATE.PRE_SUBMIT_WAITING, wasExecuted=false inputValue=test} 1`] = `
+<div
+  className="execution success"
+>
+  <div
+    className="panel abs-centered-panel hv-centered-panel"
+  >
+    <label
+      className="inputLabel"
+    >
+      <span
+        className="text"
+      >
+        Name:
+      </span>
+      <span
+        className="input"
+      >
+        <TextInput
+          value="test"
+        />
+      </span>
+    </label>
+  </div>
+  <div
+    className="logo corner-logo"
+  >
+    <Logo
+      size={200}
+      textSize={45}
+    />
+  </div>
+</div>
+`;
+
+exports[`ExecutionView should render execution view correctly {currentState: EXECUTION_STATE.SHOWING_RESULTS, wasExecuted=false inputValue=test} 1`] = `
+<div
+  className="execution execution-end success"
+>
+  <div
+    className="panel abs-centered-panel hv-centered-panel"
+  >
+    <div
+      className="success"
+    >
+      <Logo
+        logoColor="white"
+        size={400}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ExecutionView should render execution view correctly {currentState: EXECUTION_STATE.SHOWING_RESULTS, wasExecuted=true inputValue=test} 1`] = `
+<div
+  className="execution execution-end fail"
+>
+  <div
+    className="panel abs-centered-panel hv-centered-panel"
+  >
+    <div
+      className="fail"
+    >
+      <Logo
+        logoColor="white"
+        size={400}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ExecutionView should render execution view correctly {currentState: EXECUTION_STATE.START, wasExecuted=false inputValue=test} 1`] = `
+<div
+  className="execution success"
+>
+  <div
+    className="panel abs-centered-panel hv-centered-panel"
+  >
+    <div
+      className="start-paragraph"
+    >
+      <p>
+        first_paragraph
+      </p>
+    </div>
+  </div>
+  <div
+    className="logo corner-logo"
+  >
+    <Logo
+      size={200}
+      textSize={45}
+    />
+  </div>
+</div>
+`;
+
+exports[`ExecutionView should render execution view correctly {currentState: EXECUTION_STATE.SUBMITTING, wasExecuted=false inputValue=test} 1`] = `
+<div
+  className="execution success"
+>
+  <div
+    className="panel abs-centered-panel hv-centered-panel"
+  >
+    <label
+      className="inputLabel"
+    >
+      <span
+        className="text"
+      >
+        Name:
+      </span>
+      <span
+        className="input"
+      >
+        <TextInput
+          value="test"
+        />
+      </span>
+    </label>
+  </div>
+  <div
+    className="logo corner-logo"
+  >
+    <Logo
+      size={200}
+      textSize={45}
+    />
+  </div>
+</div>
+`;
