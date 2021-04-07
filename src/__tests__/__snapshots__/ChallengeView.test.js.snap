@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChallengeView should render challenge view correctly 1`] = `
+<Suspense
+  challenge={
+    Object {
+      "type": "outandsafe",
+    }
+  }
+  fallback={
+    <div>
+      Loading...
+    </div>
+  }
+>
+  <lazy
+    challenge={
+      Object {
+        "type": "outandsafe",
+      }
+    }
+  />
+</Suspense>
+`;
