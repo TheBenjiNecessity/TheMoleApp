@@ -97,21 +97,23 @@ const ExecutionView = ({ roomcode, shuffledPlayers, eliminatedPlayer }) => {
 
 	return (
 		<div className={styles.execution}>
-			<div className="panel abs-centered-panel hv-centered-panel">
-				<Story
-					activate={activate}
-					goNext={shouldGoNext}
-					resetNext={() => setShouldGoNext(false)}
-					didGoNext={didGoNext}
-					didEnd={didEnd}
-					getNextIndex={getNextIndex}
-				>
-					<Story.Chapter time={3000}>
+			<Story
+				activate={activate}
+				goNext={shouldGoNext}
+				resetNext={() => setShouldGoNext(false)}
+				didGoNext={didGoNext}
+				didEnd={didEnd}
+				getNextIndex={getNextIndex}
+			>
+				<Story.Chapter time={3000}>
+					<div className="panel abs-centered-panel hv-centered-panel">
 						<div className={styles['start-paragraph']}>
 							<p>{t('first_paragraph')}</p>
 						</div>
-					</Story.Chapter>
-					<Story.Chapter>
+					</div>
+				</Story.Chapter>
+				<Story.Chapter>
+					<div className="panel abs-centered-panel hv-centered-panel">
 						<label className={styles.inputLabel}>
 							<span className={styles.text}>Name:</span>
 							<span className={styles.input}>
@@ -123,20 +125,25 @@ const ExecutionView = ({ roomcode, shuffledPlayers, eliminatedPlayer }) => {
 								/>
 							</span>
 						</label>
-					</Story.Chapter>
-					<Story.Chapter time={3000} />
-					<Story.Chapter time={5000}>
-						<div className={styles.success}>
+					</div>
+				</Story.Chapter>
+				<Story.Chapter time={3000} />
+				<Story.Chapter time={5000}>
+					<div className={`${styles.success} ${styles['execution-end']}`}>
+						<div className="panel abs-centered-panel hv-centered-panel">
 							<Logo size={400} logoColor="white" />
 						</div>
-					</Story.Chapter>
-					<Story.Chapter time={5000}>
-						<div className={styles.fail}>
+					</div>
+				</Story.Chapter>
+				<Story.Chapter time={5000}>
+					<div className={`${styles.fail} ${styles['execution-end']}`}>
+						<div className="panel abs-centered-panel hv-centered-panel">
 							<Logo size={400} logoColor="white" />
 						</div>
-					</Story.Chapter>
-				</Story>
-			</div>
+					</div>
+				</Story.Chapter>
+			</Story>
+
 			{shouldShowLogo && (
 				<div className={clsx([ styles.logo, styles['corner-logo'] ])}>
 					<Logo size={200} textSize={45} />

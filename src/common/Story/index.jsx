@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { Fragment } from 'react';
 
 import Chapter from './Chapter';
 
@@ -12,9 +13,18 @@ import Chapter from './Chapter';
  * @returns 
  */
 
-const Story = ({ activate, goNext, resetNext, didGoNext, didEnd, getNextIndex = (index) => index + 1, children }) => {
+const Story = ({
+	activate,
+	goNext,
+	resetNext,
+	didGoNext,
+	didEnd,
+	getNextIndex = (index) => index + 1,
+	devIndex,
+	children
+}) => {
 	const childArray = React.Children.toArray(children);
-	const [ currentChapterIndex, setCurrentChapterIndex ] = useState(0);
+	const [ currentChapterIndex, setCurrentChapterIndex ] = useState(devIndex ? devIndex : 0);
 
 	const goToNextStep = useCallback(
 		() => {
@@ -32,12 +42,12 @@ const Story = ({ activate, goNext, resetNext, didGoNext, didEnd, getNextIndex = 
 
 	useEffect(
 		() => {
-			if (goNext) {
+			if (goNext && !devIndex) {
 				goToNextStep();
 				resetNext();
 			}
 		},
-		[ goNext, goToNextStep, resetNext ]
+		[ devIndex, goNext, goToNextStep, resetNext ]
 	);
 
 	// Start the next timer if there is one
@@ -45,7 +55,7 @@ const Story = ({ activate, goNext, resetNext, didGoNext, didEnd, getNextIndex = 
 		() => {
 			const { time } = childArray[currentChapterIndex].props;
 
-			if (activate && time) {
+			if (activate && time && !devIndex) {
 				const timer = setTimeout(() => {
 					goToNextStep();
 				}, time);
@@ -54,7 +64,7 @@ const Story = ({ activate, goNext, resetNext, didGoNext, didEnd, getNextIndex = 
 
 			return () => {};
 		},
-		[ activate, childArray, currentChapterIndex, goToNextStep ]
+		[ activate, childArray, currentChapterIndex, devIndex, goToNextStep ]
 	);
 
 	return childArray[currentChapterIndex];
